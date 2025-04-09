@@ -2,10 +2,17 @@
 
 import express from 'express'
 import 'dotenv/config.js'
+import cors from 'cors' 
 
 import ConnectDB from './db/index.js';
 
 const app = express() 
+app.use(cors({
+   origin: process.env.CORS_ORIGIN, 
+   credentials : true 
+
+}))
+
 
 // dotenv.config({
 //     path : './env'
@@ -13,6 +20,20 @@ const app = express()
 
 
 ConnectDB()
+//alway async return Promises 
+.then(()=>{
+   app.listen(process.env.PORT || 8000 , ()=>{
+    console.log(`Server is runing on ${process.env.PORT}`);
+   })
+    
+}
+
+
+).catch((err)=>{
+   console.log("Mongo Db Connection failed " , err);
+}
+
+)
 
 
 
