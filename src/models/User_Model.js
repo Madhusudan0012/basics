@@ -1,4 +1,6 @@
 import mongoose , {Schema} from mongoose;
+import dotenv from "dotenv" 
+
 
 const userSchema = new Schema(
     {
@@ -70,6 +72,11 @@ userSchema.methods.genrateAccessToken = function(){
             username : this.username,
             email : this.email, 
             fullname : this.fullname,
+        },
+        process.env.ACCESS_TOKEN_SECRET,
+        {
+                expiresIn : process.env.ACCESS_TOKEN_SECRET_EXPIRY,
+                
         }
     )
 }
