@@ -4,6 +4,7 @@ import express from 'express'
 import 'dotenv/config.js'
 import cors from 'cors' 
 
+// dotenv.config();  
 const app = express()
 
 import ConnectDB from './db/index.js';
@@ -20,7 +21,6 @@ ConnectDB()
    })
     
 }
-
 
 ).catch((err)=>{
    console.log("Mongo Db Connection failed " , err);
