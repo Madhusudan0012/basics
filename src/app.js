@@ -16,11 +16,11 @@ app.use(cookieParser())
 
 
 //import Rotes 
-import Userrouter from './routes/user.routes.js'
+import UserRouter from './routes/user.routes.js'
 
 
 //routes decalration 
-app.use("api/v1/users" , Userrouter);
+app.use("api/v1/users" , UserRouter);
 
 //https://localhost:8000/api/v1/users/register 
 
