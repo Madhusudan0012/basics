@@ -4,17 +4,14 @@ import express from 'express'
 import 'dotenv/config.js'
 import cors from 'cors' 
 
+const app = express()
+
 import ConnectDB from './db/index.js';
-
-
-
 
 
 // dotenv.config({
 //     path : './env'
 // })
-
-
 ConnectDB()
 //alway async return Promises 
 .then(()=>{

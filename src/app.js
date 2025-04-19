@@ -15,5 +15,14 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
+//import Rotes 
+import Userrouter from './routes/user.routes.js'
+
+
+//routes decalration 
+app.use("api/v1/users" , Userrouter);
+
+//https://localhost:8000/api/v1/users/register 
+
 
 export {app}
